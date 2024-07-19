@@ -3,6 +3,7 @@
     "name": "country-app-expo-router",
     "slug": "country-app-expo-router",
     "version": "1.0.0",
+    "scheme": "country-app-expo-router",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -21,7 +22,9 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+
     }
   }
 }
