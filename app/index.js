@@ -187,6 +187,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     paddingHorizontal: 10,
     paddingVertical: 5,
+    marginBottom: 10,
+
   },
   row: {
     flexDirection: 'row',

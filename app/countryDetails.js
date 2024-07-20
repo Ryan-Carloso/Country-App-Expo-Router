@@ -75,7 +75,7 @@ const CountryDetailsScreen = () => {
             const borderCountry = allCountries.find(c => c.cca3 === code);
             return (
               <TouchableOpacity 
-                style={[styles.hamburgerButton, { backgroundColor: theme.backgroundColor }]}
+                style={[styles.hamburgerButton, { backgroundColor: theme.buttonBackground }]}
                 key={code} 
                 onPress={() => handleBorderCountryPress(code)}
               >
@@ -96,12 +96,12 @@ const CountryDetailsScreen = () => {
   return (
     <ScrollView contentContainerStyle={[styles.container, { backgroundColor: theme.backgroundColor }]}>
       <SafeAreaView>
-      <View>
-      <TouchableOpacity onPress={() => router.push('/')}>
-        <Text>Back</Text>
+      <View style={[styles.header, { borderBottomColor: theme.color } ]}>
+      <TouchableOpacity style={[styles.headerbutton, { borderColor: theme.color } ]} onPress={() => router.push('/')}>
+        <Text style={[styles.headerBack,  { color: theme.color }]}>Back</Text>
       </TouchableOpacity>
 
-      <Text>Where in the World?</Text>
+      <Text style={[styles.headertitle, { color: theme.color } ]}>Where in the World?</Text>
     </View>
         <View style={isSmallScreen ? styles.contentContainerSmallScreen : styles.contentContainerLargeScreen}>
           <View style={styles.imageContainer}>
@@ -156,6 +156,27 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: '100%'
   },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 16,
+    borderBottomWidth: 1,
+  },
+  headerbutton: {
+    padding: 10,
+    borderWidth: 1,
+    borderRadius: 5,
+  },
+  headerBack: {
+    fontSize: 16,
+  },
+  headertitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    flex: 1,
+  },  
   contentContainerSmallScreen: {
     flexDirection: 'column',
     alignItems: 'center',
@@ -203,7 +224,6 @@ const styles = StyleSheet.create({
   },
   link: {
     fontWeight: 'bold',
-    textDecorationLine: 'underline',
   },
   hamburgerButton: {
     paddingHorizontal: 10,
